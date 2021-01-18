@@ -1,31 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_starter/ui/pages/courses.dart';
+import 'package:flutter_starter/ui/pages/courses_list.dart';
 import 'package:flutter_starter/utils/const/font_styles.dart';
 import 'package:flutter_starter/utils/const/image_assets.dart';
 import 'package:flutter_starter/utils/lang/app_localizations.dart';
 import 'package:flutter_starter/utils/lang/lang_cons.dart';
-import 'package:flutter_starter/utils/pages/courses.dart';
-import 'package:flutter_starter/utils/pages/courses_list.dart';
 import 'package:flutter_starter/utils/sp/SpUtils.dart';
 import 'package:flutter_starter/utils/theme/theme_data.dart';
 import 'package:get/get.dart';
 import 'package:responsive_x/responsive_x.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class WelcomeHome extends StatelessWidget {
-
+class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
           child: Container(
-            height:500.height,
-            width:500.width,
+            height: Get.height,
+            width: Get.width,
             padding: const EdgeInsets.only(left: 20),
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(
-                  "assets/img/background.jpg",
+                  ImageAssetsConst.WELCOME_PAGE_BACKGROUND,
                 ),
                 fit: BoxFit.cover,
               ),
@@ -67,24 +66,26 @@ class WelcomeHome extends StatelessWidget {
                   ),
                 ),
 
-
-              //========CCOURSES IN PROGRESS TEXT WIDGET=========================
-              //=================================================================
-              Container(
-                  child: Text("Courses in progress",style: FontStyles.getDefaultFontStyle(),),
-              ),
+                //========CCOURSES IN PROGRESS TEXT WIDGET=========================
+                //=================================================================
+                Container(
+                  child: Text(
+                    "Courses in progress",
+                    style: FontStyles.getDefaultFontStyle(
+                      
+                    ),
+                  ),
+                ),
 
                 // COURSES LIST WIDGET==========================================================================
                 //==============================================================================================
                 Expanded(
                   child: Container(
                     height: 500.height,
-                    width:MediaQuery.of(context).size.width,
-                   child: CoursesListClass.coursesListWidget(),
+                    width: MediaQuery.of(context).size.width,
+                    child: CoursesListClass.coursesListWidget(),
                   ),
                 ),
-
-
               ],
             ),
           ),
