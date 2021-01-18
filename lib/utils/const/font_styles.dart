@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_starter/utils/const/font_const.dart';
 import 'package:flutter_starter/utils/sp/SpUtils.dart';
-import 'package:get/get.dart';
 import 'package:responsive_x/responsive_x.dart';
 
 class FontStyles {
