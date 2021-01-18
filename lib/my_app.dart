@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
           themeMode: ThemeService.theme,
           darkTheme: Themes.dark,
           theme: Themes.light,
-          home: SplashScreenUI(),
+          home: WelcomeHome(),
         );
       });
     });
