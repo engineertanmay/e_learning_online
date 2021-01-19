@@ -11,7 +11,7 @@ class FontStyles {
   }) {
     return TextStyle(
       fontSize: fontSize.fontSize,
-      fontFamily: _getDefaultFontFamily(),
+      // fontFamily: _getDefaultFontFamily(),
       color: color,
       fontWeight: fontWeight,
     );

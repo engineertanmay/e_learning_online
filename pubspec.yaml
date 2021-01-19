@@ -64,6 +64,7 @@ dependencies:
   #####Responsive Design ####
   ###########################
   responsive_x: ^0.1.1
+  flappy_search_bar: 1.4.1
 
   ###########################
   ###### Localizations ######
@@ -79,7 +80,6 @@ dev_dependencies:
   build_runner:
 
   flutter_launcher_icons: "^0.8.0"
-  google_fonts: ^1.1.1
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
