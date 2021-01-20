@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_starter/ui/pages/adobe_xd.dart';
+import 'package:flutter_starter/ui/pages/choose_learn.dart';
+import 'package:flutter_starter/ui/pages/pick_plan.dart';
 import 'package:flutter_starter/ui/pages/welcome_screen.dart';
 import 'package:get/get.dart';
 import 'package:responsive_x/responsive_x.dart';
-import 'ui/pages/courses.dart';
 import 'utils/lang/app_localizations.dart';
 import 'utils/theme/theme_data.dart';
 import 'utils/theme/themes.dart';
@@ -28,8 +30,8 @@ class MyApp extends StatelessWidget {
           darkTheme: Themes.dark,
           theme: Themes.light,
           // home: WelcomeScreen(),
-          home: CoursesScreen(),
-        );
+          home:AdobeXdScreen(),
+          );
       });
     });
   }

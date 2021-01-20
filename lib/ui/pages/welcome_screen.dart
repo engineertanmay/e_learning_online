@@ -1,6 +1,7 @@
 import 'package:flappy_search_bar/flappy_search_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_starter/ui/pages/elearning_list.dart';
+import 'package:flutter_starter/ui/pages/elearning_list_widget.dart';
 import 'package:flutter_starter/utils/const/font_styles.dart';
 import 'package:flutter_starter/utils/const/image_assets.dart';
 import 'package:flutter_starter/utils/lang/app_localizations.dart';
@@ -17,66 +18,73 @@ class WelcomeScreen extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Container(
-            height: Get.height,
-            width: Get.width,
-            padding: const EdgeInsets.only(left: 20),
+            // height: Get.height,
+            // width: Get.width,
             decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(
-                  ImageAssetsConst.WELCOME_PAGE_BACKGROUND,
-                ),
-                fit: BoxFit.cover,
-              ),
+              color: Colors.white,
             ),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.2,
-                ),
-                //appbar centerRight onPressed button====================
-                // ============================================================
-
-                //welcome back text widget area===============================================
-                //============================================================================
                 Container(
-                  child: Text(
-                    "Welcome back \nMikotaj!",
-                    style: FontStyles.getDefaultFontStyle(
-                        color: Colors.white, fontSize: 34.fontSize),
-                    // fontStyle: FontStyle.italic,
-                  ),
-                ),
-
-                //========SEARCH BAR WIDGET==================================
-                //================================================================
-                Padding(
-                  padding: const EdgeInsets.only(right: 30, left: 10),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(15.0),
+                  height: 400.height,
+                  width: Get.width,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image:
+                          AssetImage(ImageAssetsConst.WELCOME_PAGE_BACKGROUND),
+                      fit: BoxFit.cover,
                     ),
-                    child: TextField(
-                      textAlign: TextAlign.center,
-                      decoration: InputDecoration(
-                        suffixIcon: Icon(Icons.search_off_rounded),
-                        hintText: 'Search for new knowledge!',
+                    borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(40),
+                      bottomRight: Radius.circular(40),
+                    ),
+                  ),
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.1,
                       ),
-                    ),
+                      //welcome back text widget=====================================
+                      //=============================================================
+                      Container(
+                        child: Text(
+                          "Welcome back \nMikotaj!",
+                          style: FontStyles.getDefaultFontStyle(
+                              color: Colors.white, fontSize: 34.fontSize),
+                          // fontStyle: FontStyle.italic,
+                        ),
+                      ),
+
+                      //SEARCH BAR WIDGET==========================================
+                      //=============================================================
+
+                      Padding(
+                        padding: const EdgeInsets.only(right: 30, left: 10),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(15.0),
+                          ),
+                          child: TextField(
+                            textAlign: TextAlign.center,
+                            decoration: InputDecoration(
+                              suffixIcon: Icon(Icons.search_off_rounded),
+                              hintText: 'Search for new knowledge!',
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-
-
-
-
 
                 //START NEW LEARNING STAFF============================================
                 //====================================================================
+
                 Padding(
-                  padding: const EdgeInsets.only(left:10.0,right:30,top:10,bottom: 10),
+                  padding: const EdgeInsets.all(20.0),
                   child: Container(
+                    margin: const EdgeInsets.only(top: 250),
                     decoration: BoxDecoration(
                       color: Color(0xffFEF3F3),
                       borderRadius: BorderRadius.circular(15.0),
@@ -98,9 +106,8 @@ class WelcomeScreen extends StatelessWidget {
                         child: Container(
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                              Container(
-                                child: Text("Categories")),
+                            children: [
+                              Container(child: Text("Categories")),
                               Icon(Icons.arrow_forward),
                             ],
                           ),
@@ -111,10 +118,13 @@ class WelcomeScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+
+                SizedBox(
+                  height: 20.height,
+                ),
                 //========CCOURSES IN PROGRESS TEXT WIDGET=========================
                 //=================================================================
                 Container(
-                  
                   child: Text(
                     "Courses in progress",
                     style: FontStyles.getDefaultFontStyle(),
@@ -125,16 +135,22 @@ class WelcomeScreen extends StatelessWidget {
                 //==============================================================================================
                 Expanded(
                   child: Container(
-                    decoration: BoxDecoration(
-                    color:Colors.white,
-                  ),
-                    // height: 500.height,
+                    height: 500.height,
                     width: MediaQuery.of(context).size.width,
-                    // child: CoursesListClass(),
+                    child: ElearningListWidgetClass.coursesListWidget(),
                   ),
                 ),
               ],
             ),
+
+            //appbar centerRight onPressed button====================
+            // ============================================================
+
+            //welcome back text widget area===============================================
+            //============================================================================
+
+            //========SEARCH BAR WIDGET==================================
+            //================================================================
           ),
         ),
       ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_starter/ui/pages/elearning_list_widget.dart';
-import 'package:flutter_starter/ui/pages/pick_plan.dart';
+import 'package:flutter_starter/ui/pages/lesson.dart';
 import 'package:flutter_starter/utils/const/font_styles.dart';
 import 'package:flutter_starter/utils/const/image_assets.dart';
 import 'package:flutter_starter/utils/lang/app_localizations.dart';
@@ -10,26 +10,24 @@ import 'package:flutter_starter/utils/theme/theme_data.dart';
 import 'package:get/get.dart';
 import 'package:responsive_x/responsive_x.dart';
 
-class ChooseScreen extends StatelessWidget {
+class AdobeXdScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
           child: Container(
-                      height: Get.height,
+            height: Get.height,
             width: Get.width,
             decoration: BoxDecoration(
               image: DecorationImage(
-               
                 image: AssetImage(
                   ImageAssetsConst.WELCOME_PAGE_BACKGROUND,
                 ),
                 fit: BoxFit.cover,
-                 
               ),
             ),
-            child: Column( 
+            child: Column(
               children: [
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.2,
@@ -41,23 +39,18 @@ class ChooseScreen extends StatelessWidget {
                 //============================================================================
                 Container(
                   alignment: Alignment.center,
-                  child: Text("Choose what \nto learn",
-                      style: FontStyles.getDefaultFontStyle(
-                        color: Colors.white,
-                        fontSize: 34.fontSize,
-                        fontWeight: FontWeight.bold,
-                      )
-                      // fontStyle: FontStyle.italic,
-                      ),
+                  child: Image.asset(ImageAssetsConst.ADOBE_XD),
                 ),
 
                 SizedBox(
                   height: 20.height,
                 ),
+
                 // COURSES LIST WIDGET==========================================================================
                 //==============================================================================================
                 Expanded(
                   child: Container(
+                    height: 250.height,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.only(
                           topRight: Radius.circular(40),
@@ -66,24 +59,34 @@ class ChooseScreen extends StatelessWidget {
                     ),
                     // height: 500.height,
                     width: MediaQuery.of(context).size.width,
-                    child: ElearningListWidgetClass.ChooseListWidget(),
+                    child: ElearningListWidgetClass.adobeListWidget(),
                   ),
                 ),
 
-                //CONTINUE BUTTON WIDGET===================================
-                //========================================================
-                Container(
+                Align(
                   alignment: Alignment.bottomCenter,
-                  child: RaisedButton(
-                    onPressed: () {
-                    Get.to(PickPlan());
-                  },
-                  child:Row(
-                    children: [
-                      Text("Continue"),
-                      Icon(Icons.arrow_forward),
-                    ],
-                  ),
+                  child: ButtonTheme(
+                    minWidth: 400.height,
+                    height: 70.height,
+                    child: RaisedButton(
+                        elevation: 5,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              padding: EdgeInsets.only(left: 150),
+                              child: Text("Continue",
+                                  style: TextStyle(
+                                      fontSize: 20.fontSize,
+                                      color: Color(0xffF18C8E))),
+                            ),
+                            Icon(Icons.arrow_forward),
+                          ],
+                        ),
+                        color: Color(0xffFEF3F3),
+                        onPressed: () {
+                          Get.to(LessonScreen());
+                        }),
                   ),
                 ),
               ],
