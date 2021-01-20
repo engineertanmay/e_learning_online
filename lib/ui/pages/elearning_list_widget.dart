@@ -159,6 +159,60 @@ class ElearningListWidgetClass {
     );
   }
 
+  // pick your plan screen LIST WIDGET==========================================
+  //==========================================================================
+  static Widget PickPlanListWidget() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      child: ListView.builder(
+          scrollDirection: Axis.vertical,
+          itemCount: CoursesListClass.pickPlanList.length,
+          itemBuilder: (context, index) {
+            
+             if(index==0){
+                return Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ListTile(
+                  title: Text(
+                    CoursesListClass.pickPlanList[index].title,
+                    style: TextStyle(
+                      fontSize: 18.fontSize,
+                      color: Color(0xffF18C8E),
+                    ),
+                  ),
+                  subtitle: Text(CoursesListClass.pickPlanList[index].subtitle,
+                      style: FontStyles.getDefaultFontStyle(
+                          fontSize: 14.fontSize, color: Color(0xffF18C8E))),
+                  trailing: Text(CoursesListClass.pickPlanList[index].name,
+                      style: FontStyles.getDefaultFontStyle(fontSize: 25.fontSize,
+                          color: Color(0xffF18C8E))),
+                ),
+              );
+             }else{
+                return Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ListTile(
+                  title: Text(
+                    CoursesListClass.pickPlanList[index].title,
+                    style: TextStyle(
+                      fontSize: 18.fontSize,color: Colors.black,
+                           ),
+                  ),
+                  subtitle: Text(CoursesListClass.pickPlanList[index].subtitle,
+                      style: FontStyles.getDefaultFontStyle(
+                          fontSize: 14.fontSize, color: Color(0xffF18C8E))),
+                  trailing: Text(CoursesListClass.pickPlanList[index].name,
+                      style: FontStyles.getDefaultFontStyle(fontSize: 25.fontSize,
+                          color: Color(0xffF18C8E),)),
+                ),
+              );
+             }
+          
+          }
+          ),
+    );
+  }
+
   //adobe xd essential  LIST WIDGET==========================================
   //==========================================================================
   static Widget adobeListWidget() {
@@ -170,7 +224,7 @@ class ElearningListWidgetClass {
           itemCount: CoursesListClass.adobeList.length,
           itemBuilder: (context, index) {
             if (index == 0) {
-             return Padding(
+              return Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: ListTile(
                   leading: CircleAvatar(

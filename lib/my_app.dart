@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
           darkTheme: Themes.dark,
           theme: Themes.light,
           // home: WelcomeScreen(),
-          home:AdobeXdScreen(),
+          home:ChooseScreen(),
           );
       });
     });

@@ -63,29 +63,26 @@ class AdobeXdScreen extends StatelessWidget {
                   ),
                 ),
 
-                Align(
+                 Align(
                   alignment: Alignment.bottomCenter,
                   child: ButtonTheme(
                     minWidth: 400.height,
                     height: 70.height,
                     child: RaisedButton(
                         elevation: 5,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Container(
-                              padding: EdgeInsets.only(left: 150),
-                              child: Text("Continue",
-                                  style: TextStyle(
-                                      fontSize: 20.fontSize,
-                                      color: Color(0xffF18C8E))),
-                            ),
-                            Icon(Icons.arrow_forward),
-                          ],
+                        child: ListTile(
+                          title: Align(
+                            alignment: Alignment.center,
+                            child: Text("Continue",
+                                style: TextStyle(
+                                    fontSize: 20.fontSize,
+                                    color: Color(0xffF18C8E))),
+                          ),
+                          trailing: Icon(Icons.arrow_forward),
                         ),
                         color: Color(0xffFEF3F3),
                         onPressed: () {
-                          Get.to(LessonScreen());
+                          Get.to(AdobeXdScreen());
                         }),
                   ),
                 ),

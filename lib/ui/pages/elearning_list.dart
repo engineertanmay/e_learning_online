@@ -77,6 +77,46 @@ class CoursesListClass {
     ChooseSingleList5,
   ];
 
+
+//pick plan screen single  LIST=============================================================
+  //=============================================================================================
+  static ConstProperty pickPlanSingleList1 = ConstProperty.PickPlanProperty(
+     name:"\u0024 0",
+           assetImgPath: "assets/img/Photoshop_Icon.png",
+           title: "Free Trail ",
+      subtitle: "15 days",
+      icon: Icons.check);
+  static ConstProperty pickPlanSingleList2 = ConstProperty.PickPlanProperty(
+     name:"\u0024 14.99",
+          assetImgPath: "assets/img/Photoshop_Icon.png",
+          title: "Medium",
+      subtitle: "100 Courses",
+      icon: Icons.play_arrow_rounded);
+  static ConstProperty pickPlanSingleList3 = ConstProperty.PickPlanProperty(
+     name:"\u0024 50.99",
+           assetImgPath: "assets/img/Photoshop_Icon.png",
+           title: "Intermadiate",
+      subtitle: "100 Courses",
+      icon: Icons.play_arrow_rounded);
+  static ConstProperty pickPlanSingleList4 = ConstProperty.PickPlanProperty(
+     name:"\u0024 56.21",
+          assetImgPath: "assets/img/Photoshop_Icon.png",
+          title: "Figma",
+      subtitle: "25 Courses",
+      icon: Icons.check);
+  static ConstProperty pickPlanSingleList5 = ConstProperty.PickPlanProperty(
+    name:"\u0024 25.25",
+             assetImgPath: "assets/img/Photoshop_Icon.png",
+            title: "Adobe photshop",
+      subtitle: "130 Courses",
+      icon: Icons.hourglass_empty_rounded);
+  static List<ConstProperty> pickPlanList = [
+    pickPlanSingleList1,
+    pickPlanSingleList2,
+    pickPlanSingleList3,
+    pickPlanSingleList4,
+    pickPlanSingleList5,
+  ];
   //adobe xd essential list==============================================
   //=====================================================================
    static ConstProperty adobeSingleList1 = ConstProperty.AdobeXdProperty(

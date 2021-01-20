@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_starter/ui/pages/adobe_xd.dart';
 import 'package:flutter_starter/ui/pages/elearning_list_widget.dart';
 import 'package:flutter_starter/utils/const/font_styles.dart';
 import 'package:flutter_starter/utils/const/image_assets.dart';
@@ -63,24 +64,52 @@ class PickPlan extends StatelessWidget {
                     ),
                     // height: 500.height,
                     width: MediaQuery.of(context).size.width,
-                    child: ElearningListWidgetClass.ChooseListWidget(),
+                    child: ElearningListWidgetClass.PickPlanListWidget(),
                   ),
                 ),
 
                 //CONTINUE BUTTON WIDGET===================================
                 //========================================================
-                Container(
+                 Padding(
+                   padding: const EdgeInsets.symmetric(horizontal:10.0),
+                   child: Container(
+                     child: Align(
+                                         alignment: Alignment.bottomCenter,
+                      child: ButtonTheme(
+                           minWidth: 400.height,
+                        height: 70.height,
+                        child: ListTile(
+                          leading: Image.asset("assets/img/Visa_Icon.png",),
+                          title:Text("VISA CARD *079",),
+                          trailing: Icon(Icons.arrow_drop_down,size: 40,),
+                        ),
+                      ),
+                ),
+                   ),
+                 ),
+                
+                Align(
                   alignment: Alignment.bottomCenter,
-                  child: RaisedButton(
-                    onPressed: () {
-                    Get.to(PickPlan());
-                  },
-                  child:Row(
-                    children: [
-                      Text("Continue"),
-                      Icon(Icons.arrow_forward),
-                    ],
-                  ),
+                  child: ButtonTheme(
+                    minWidth: 400.height,
+                    height: 70.height,
+                    child: RaisedButton(
+                        elevation: 5,
+                        child: ListTile(
+                          title: Align(
+                            alignment: Alignment.center,
+                            child: Text("Terms & Condition \nContinue with payments",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                    fontSize: 20.fontSize,
+                                    color: Color(0xffF18C8E))),
+                          ),
+                          trailing: Icon(Icons.arrow_forward),
+                        ),
+                        color: Color(0xffFEF3F3),
+                        onPressed: () {
+                          Get.to(AdobeXdScreen());
+                        }),
                   ),
                 ),
               ],

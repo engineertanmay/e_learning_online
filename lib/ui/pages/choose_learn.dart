@@ -72,18 +72,27 @@ class ChooseScreen extends StatelessWidget {
 
                 //CONTINUE BUTTON WIDGET===================================
                 //========================================================
-                Container(
+                 Align(
                   alignment: Alignment.bottomCenter,
-                  child: RaisedButton(
-                    onPressed: () {
-                    Get.to(PickPlan());
-                  },
-                  child:Row(
-                    children: [
-                      Text("Continue"),
-                      Icon(Icons.arrow_forward),
-                    ],
-                  ),
+                  child: ButtonTheme(
+                    minWidth: 400.height,
+                    height: 70.height,
+                    child: RaisedButton(
+                        elevation: 5,
+                        child: ListTile(
+                          title: Align(
+                            alignment: Alignment.center,
+                            child: Text("Continue with3",
+                                style: TextStyle(
+                                    fontSize: 20.fontSize,
+                                    color: Color(0xffF18C8E))),
+                          ),
+                          trailing: Icon(Icons.arrow_forward),
+                        ),
+                        color: Color(0xffFEF3F3),
+                        onPressed: () {
+                          Get.to(PickPlan());
+                        }),
                   ),
                 ),
               ],

@@ -27,13 +27,18 @@ class ConstProperty {
       @required this.subtitle,
       @required this.icon});
 
-
-
+  //pick plan list PROPERTY=========================
+      //========================================================
+ ConstProperty.PickPlanProperty(
+      {@required this.name,
+        @required this.assetImgPath,
+        @required this.title,
+      @required this.subtitle,
+      @required this.icon});
 
       //adobe xd essential property==================================
       //================================================================
-      //CHOOSE WHAT TO LEARN PROPERTY=========================
-      //========================================================
+    
       ConstProperty.AdobeXdProperty(
       {@required this.name,
       @required this.title,
