@@ -31,6 +31,7 @@ class WelcomeScreen extends StatelessWidget {
                   child: Text(
                     "Welcome back \nMikotaj!",
                     style: FontStyles.getDefaultFontStyle(
+                      fontWeight: FontWeight.bold,
                         color: Colors.black, fontSize: 34.fontSize),
                     // fontStyle: FontStyle.italic,
                   ),
