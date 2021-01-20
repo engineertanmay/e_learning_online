@@ -1,6 +1,6 @@
 import 'package:flappy_search_bar/flappy_search_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_starter/ui/pages/elearning_list.dart';
+import 'package:flutter_starter/ui/pages/courses.dart';
 import 'package:flutter_starter/ui/pages/elearning_list_widget.dart';
 import 'package:flutter_starter/utils/const/font_styles.dart';
 import 'package:flutter_starter/utils/const/image_assets.dart';
@@ -18,116 +18,99 @@ class WelcomeScreen extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Container(
-            // height: Get.height,
-            // width: Get.width,
+            height: Get.height,
+            width: Get.width,
             decoration: BoxDecoration(
               color: Colors.white,
             ),
             child: Column(
               children: [
                 Container(
-                  height: 400.height,
-                  width: Get.width,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image:
-                          AssetImage(ImageAssetsConst.WELCOME_PAGE_BACKGROUND),
-                      fit: BoxFit.cover,
-                    ),
-                    borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(40),
-                      bottomRight: Radius.circular(40),
-                    ),
-                  ),
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.1,
-                      ),
-                      //welcome back text widget=====================================
-                      //=============================================================
-                      Container(
-                        child: Text(
-                          "Welcome back \nMikotaj!",
-                          style: FontStyles.getDefaultFontStyle(
-                              color: Colors.white, fontSize: 34.fontSize),
-                          // fontStyle: FontStyle.italic,
-                        ),
-                      ),
-
-                      //SEARCH BAR WIDGET==========================================
-                      //=============================================================
-
-                      Padding(
-                        padding: const EdgeInsets.only(right: 30, left: 10),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(15.0),
-                          ),
-                          child: TextField(
-                            textAlign: TextAlign.center,
-                            decoration: InputDecoration(
-                              suffixIcon: Icon(Icons.search_off_rounded),
-                              hintText: 'Search for new knowledge!',
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
+                  padding: EdgeInsets.all(20),
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    "Welcome back \nMikotaj!",
+                    style: FontStyles.getDefaultFontStyle(
+                        color: Colors.black, fontSize: 34.fontSize),
+                    // fontStyle: FontStyle.italic,
                   ),
                 ),
 
                 //START NEW LEARNING STAFF============================================
                 //====================================================================
 
-                Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Container(
-                    margin: const EdgeInsets.only(top: 250),
-                    decoration: BoxDecoration(
-                      color: Color(0xffFEF3F3),
-                      borderRadius: BorderRadius.circular(15.0),
-                    ),
-                    child: ListTile(
-                      title: Text(
-                        "Start learning new Staff! ",
+                Container(
+                  margin: EdgeInsets.all(20),
+                  padding: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    color: Color(0xffFEF3F3),
+                    borderRadius: BorderRadius.circular(26),
+                  ),
+                  child: ListTile(
+                    title: Text("Start learning new staff!",
                         style: FontStyles.getDefaultFontStyle(
-                          fontSize: 25.fontSize,
+                          color: Colors.black,
+                          fontSize: 22.fontSize,
+                        )),
+                    subtitle: Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Color(0xffF18C8E),
+                          borderRadius: BorderRadius.circular(26),
+                        ),
+                        child: ListTile(
+                          title: Text("Continuing",
+                              style: FontStyles.getDefaultFontStyle(
+                                color: Colors.white,
+                              )),
+                          trailing: Icon(Icons.arrow_forward,color:Colors.white),
                         ),
                       ),
-                      subtitle: RaisedButton(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(18.0),
-                            side: BorderSide(color: Colors.red)),
-                        onPressed: () {},
-                        color: Colors.red,
-                        textColor: Colors.white,
-                        child: Container(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Container(child: Text("Categories")),
-                              Icon(Icons.arrow_forward),
-                            ],
-                          ),
-                        ),
-                      ),
-                      trailing:
-                          Image.asset("assets/img/undraw_researching_22gp.png"),
                     ),
+                    trailing:
+                        Image.asset("assets/img/undraw_researching_22gp.png"),
                   ),
                 ),
 
-                SizedBox(
-                  height: 20.height,
-                ),
+                // ListTile(
+                //   title: Text(
+                //     "Start learning new Staff! ",
+                //     style: FontStyles.getDefaultFontStyle(
+                //       fontSize: 25.fontSize,
+                //     ),
+                //   ),
+                //   subtitle: RaisedButton(
+                //     shape: RoundedRectangleBorder(
+                //         borderRadius: BorderRadius.circular(18.0),
+                //        ),
+                //     onPressed: () {},
+                //     color: Colors.red,
+                //     child: ListTile(
+                //       leading: Container(child: Text("Categories",style:FontStyles.getDefaultFontStyle(color:Colors.white,fontSize: 18.fontSize))),
+                //          trailing: Icon(Icons.arrow_forward,color:Colors.white,),
+
+                //       ),
+
+                //   ),
+                //   trailing:
+                //       Image.asset("assets/img/undraw_researching_22gp.png"),
+                // ),
+
+                // SizedBox(
+                //   height: 20.height,
+                // ),
                 //========CCOURSES IN PROGRESS TEXT WIDGET=========================
                 //=================================================================
-                Container(
-                  child: Text(
-                    "Courses in progress",
-                    style: FontStyles.getDefaultFontStyle(),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 30.0),
+                  child: Container(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      "Courses in progress",
+                      style: FontStyles.getDefaultFontStyle(
+                          fontSize: 18.fontSize, fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ),
 
@@ -140,17 +123,32 @@ class WelcomeScreen extends StatelessWidget {
                     child: ElearningListWidgetClass.coursesListWidget(),
                   ),
                 ),
+
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: ButtonTheme(
+                    minWidth: 400.height,
+                    height: 70.height,
+                    child: RaisedButton(
+                        elevation: 5,
+                        child: ListTile(
+                          title: Align(
+                            alignment: Alignment.center,
+                            child: Text("Continue with2",
+                                style: TextStyle(
+                                    fontSize: 20.fontSize,
+                                    color: Color(0xffF18C8E))),
+                          ),
+                          trailing: Icon(Icons.arrow_forward),
+                        ),
+                        color: Color(0xffFEF3F3),
+                        onPressed: () {
+                          Get.to(CoursesScreen());
+                        }),
+                  ),
+                ),
               ],
             ),
-
-            //appbar centerRight onPressed button====================
-            // ============================================================
-
-            //welcome back text widget area===============================================
-            //============================================================================
-
-            //========SEARCH BAR WIDGET==================================
-            //================================================================
           ),
         ),
       ),

@@ -109,6 +109,7 @@ class ElearningListWidgetClass {
                     style: TextStyle(
                       fontSize: 14.fontSize,
                       color: Color(0xff305F72),
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                   subtitle: Text(CoursesListClass.chooseList[index].subtitle,
@@ -140,7 +141,7 @@ class ElearningListWidgetClass {
                   ),
                   title: Text(
                     CoursesListClass.chooseList[index].title,
-                    style: TextStyle(color: Color(0xff305F72)),
+                    style: TextStyle(fontWeight:FontWeight.bold,color: Color(0xff305F72)),
                   ),
                   subtitle: Text(CoursesListClass.chooseList[index].subtitle,
                       style: FontStyles.getDefaultFontStyle(
