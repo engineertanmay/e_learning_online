@@ -82,7 +82,7 @@ class AdobeXdScreen extends StatelessWidget {
                         ),
                         color: Color(0xffFEF3F3),
                         onPressed: () {
-                          Get.to(AdobeXdScreen());
+                          Get.to(VideoPlayerScreen());
                         }),
                   ),
                 ),
